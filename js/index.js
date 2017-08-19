@@ -1,16 +1,16 @@
 $(function () {
 
     //1.获取当前导航条距离窗口的y值
-    var nav_top = $('.nav').offset().top;
+    var navTop = $('.nav').offset().top;
 
     //2.监听窗口的滚动
     $(window).on('scroll',function () {
 
         // 2.1 获取当前滚动的top方向偏移量
-        var scroll_top = $(window).scrollTop();
+        var scrollTop = $(window).scrollTop();
         //2.2如果滚动的偏移量
         /*2.2 如果滚动的偏移量大于导航距离顶部的高度*/
-        if (scroll_top > nav_top) {
+        if (scrollTop > navTop) {
 
             /*2.2.1 把导航的定位设置为fixed*/
             $('.nav').css({
@@ -26,7 +26,7 @@ $(function () {
             /*2.2.3 把导航的定位设置为absolute  */
             $('.nav').css({
                 'position':'absolute',
-                'top':nav_top,
+                'top':navTop,
                 'border-bottom':'none',
                 'box-shadow':'none'
             });
@@ -55,13 +55,13 @@ $(function () {
      * 三.处理返回顶部逻辑
      * */
     /*1.指定一个值*/
-    var ori_num = 100;
+    var originValue = 100;
     /*2.监听窗口滚动*/
     $(window).on('scroll',function () {
         /*2.1 如果当前滚动值大于窗口的高度, 让其显示否则隐藏*/
-        var scroll_top  = $(window).scrollTop();
-        console.log(scroll_top);
-        if (scroll_top > ori_num) {
+        var scrollTop  = $(window).scrollTop();
+        console.log(scrollTop);
+        if (scrollTop > originValue) {
             $('.back_top').stop().fadeTo(200,1);
         }else {
             $('.back_top').stop().fadeTo(200,0);

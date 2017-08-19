@@ -1,7 +1,7 @@
 ;(function (angular) {
     var app = angular.module("app", []);
     app.controller("AppController",["$scope",function ($scope) {
-        $scope.title="备忘录";
+        $scope.title="记录";
         $scope.dataList=[
             {name:"wo",checked:false},
             {name:"wo",checked:false},
@@ -12,10 +12,11 @@
             // alert($scope.content);
             event.preventDefault();
             if ($scope.content=="" || $scope.content==undefined){
+                alert("需要输入内容")
                 return;
             }
             var dataList = {
-                name:$scope.name,
+                name:$scope.content,
                 checked:false
             };
             $scope.dataList.unshift(dataList);
