@@ -12,14 +12,13 @@
             // alert($scope.content);
             event.preventDefault();
             if ($scope.content=="" || $scope.content==undefined){
-                alert("不能为空");
                 return;
             }
-            var obj = {
+            var dataList = {
                 name:$scope.name,
                 checked:false
             };
-            $scope.dataList.unshift(obj);
+            $scope.dataList.unshift(dataList);
             $scope.content="";
         };
         $scope.delete=function (index) {

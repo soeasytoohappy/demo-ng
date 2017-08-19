@@ -1,2 +1,2 @@
 # demo-ng
-angular 练习
+angular +jQ
